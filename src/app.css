@@ -1,0 +1,1170 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@100..900&family=Inter:wght@100..900&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: rgb(241, 241, 241);
+}
+body.active-modal {
+  overflow-y: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  text-decoration: none;
+}
+header .logo img {
+  width: 60px;
+}
+
+header .logo span {
+  color: #16325b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+header button.round {
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #f0f5ff;
+  color: #000;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  font-size: 18px !important;
+}
+header button.round:hover svg {
+  color: #0048cf;
+}
+@media (max-width: 768px) {
+  header .logo span {
+    display: none;
+  }
+}
+.myprof {
+  text-transform: capitalize !important;
+}
+.myprof .userimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #0048cf;
+  padding: 3px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+.myprof .userimg .round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.myprof .userimg .round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.myprof .profinfo h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #16325b;
+}
+
+#account-menu .MuiPaper-elevation {
+  right: 3% !important;
+  width: 180px !important;
+  left: auto !important;
+}
+
+/* sidebar */
+.main .sidebarWrapper {
+  width: 20%;
+  flex: 0 0 20%;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+.main .sidebarWrapper.open {
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+  flex: 0 0 0%;
+}
+/* Responsiveness for Small Screens */
+@media (max-width: 768px) {
+  .main .sidebarWrapper.closed {
+    width: 0% !important; /* Sidebar disembunyikan */
+    flex: 0 0 0% !important;
+    position: absolute !important;
+    background-color: #0048cf !important;
+  }
+
+  .main .sidebarWrapper.closed {
+    position: absolute !important;
+  }
+
+  .main .sidebarWrapper .sidebar {
+    left: -300px !important;
+    background: #fff !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .main .sidebarWrapper.open .sidebar {
+    width: 90% !important;
+    flex: 0 0 90% !important;
+    left: -31px !important;
+  }
+
+  /* Coba menambahkan aturan untuk body lebih spesifik */
+  .main .sidebarWrapper.open {
+    background-color: #000 !important; /* Mengubah background menjadi hitam */
+  }
+
+  .main .content {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+
+  .main .content.open {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .main .content.closed .right-content {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .main .content.open .right-content {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .lines {
+    width: 100%;
+    padding-left: 0 !important; /* Adjust padding for small screens */
+  }
+}
+
+.main .sidebarWrapper.open .sidebar {
+  transition: all 0.3s ease-in-out;
+  left: -100%; /* Sidebar muncul */
+}
+
+.main .sidebarWrapper .sidebar {
+  width: 20%;
+  height: 100vh;
+  max-height: calc(100% - 70px);
+  position: fixed;
+  top: 80px;
+  left: -31px;
+  /* background: linear-gradient(
+    135deg,
+    rgba(236, 236, 236, 0.9),
+    rgb(233, 230, 255),
+    rgb(250, 231, 251),
+    rgba(236, 236, 236, 0.9)
+  ); */
+  background: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+/* Sidebar State */
+
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar {
+  width: 3px; /* Lebar scrollbar */
+}
+.main .sidebarWrapper:hover .sidebar::-webkit-scrollbar-thumb {
+  background: #0033a0; /* Warna thumb */
+  border-radius: 10px; /* Membuat ujung bulat */
+}
+
+.main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {
+  background: rgb(241, 241, 241);
+  width: 3px;
+}
+
+/* Styling untuk thumb saat di-hover */
+/* .main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgb(241, 241, 241);
+} */
+
+.main .sidebarWrapper .sidebar ul {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.main .sidebarWrapper .sidebar ul li button {
+  color: #000;
+  text-align: left;
+  width: 100%;
+  justify-content: left;
+  padding: 12px 15px;
+  align-items: center;
+  text-transform: capitalize !important;
+  font-size: 17px;
+}
+
+.main .sidebarWrapper .sidebar ul li button .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.main .sidebarWrapper .sidebar ul li button .icon svg {
+  color: #000;
+  opacity: 0.8;
+  font-size: 24px;
+}
+.main .sidebarWrapper .sidebar ul li button .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+}
+.arrow {
+  transition: transform 0.3s ease; /* Menambahkan transisi rotasi */
+}
+
+.arrow.rotate {
+  transform: rotate(90deg); /* Rotasi 90 derajat ketika submenu terbuka */
+}
+
+.main .sidebarWrapper .sidebar li button.active {
+  background: #0033a014;
+}
+.main .sidebarWrapper .sidebar li button .arrow svg {
+  font-size: 13px !important;
+}
+.main .sidebarWrapper .sidebar .submenu {
+  padding: 10px 15px;
+}
+.main .sidebarWrapper .sidebar .submenu ul {
+  padding: 0;
+  margin: 0;
+}
+.main .sidebarWrapper .sidebar .submenu ul li {
+  width: 100%;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
+}
+.main .sidebarWrapper .sidebar .submenu ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: 5px 0;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.main .sidebarWrapper .sidebar .submenu ul li:hover {
+  background: #0033a014;
+}
+.main .sidebarWrapper .sidebar .submenu ul li a svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  font-size: 22px !important;
+}
+.active-item {
+  background-color: #0033a014;
+  font-weight: bold;
+  border-left: 4px solid #16325b;
+  transition: background-color 0.8s ease, border-left 0.3s ease;
+  -webkit-transition: background-color 0.8s ease, border-left 0.3s ease;
+  -moz-transition: background-color 0.8s ease, border-left 0.3s ease;
+  -ms-transition: background-color 0.8s ease, border-left 0.3s ease;
+  -o-transition: background-color 0.8s ease, border-left 0.3s ease;
+}
+/* .active {
+  background-color: #e0e0e0; 
+} */
+
+.rotate {
+  transform: rotate(90deg); /* Memutar icon panah jika submenu dibuka */
+}
+
+.submenuWrapper {
+  padding: 0;
+}
+
+.submenuWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  -moz-transition: max-height 0.3s ease-in-out;
+  -ms-transition: max-height 0.3s ease-in-out;
+  -o-transition: max-height 0.3s ease-in-out;
+}
+
+.submenuWrapper.expanded {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in-out;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  -moz-transition: max-height 0.5s ease-in-out;
+  -ms-transition: max-height 0.5s ease-in-out;
+  -o-transition: max-height 0.5s ease-in-out;
+}
+
+/* dashboard */
+.main .content {
+  width: 80%;
+  flex: 0 0 80%;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.main .content.open {
+  width: 100%;
+  flex: 0 0 100%;
+}
+.main .content.open .right-content {
+  width: 100%;
+  flex: 0 0 100%;
+  padding-left: 30px;
+}
+
+.right-content {
+  padding: 90px 30px 0 0;
+}
+.right-text {
+  margin: 20px 0 30px 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.right-text h1 {
+  font-size: 30px;
+}
+
+.dashboardboxwrapper {
+  gap: 15px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dashboardboxwrapper .dashboardbox {
+  width: 49%;
+  height: 220px;
+  background: #ccc;
+  /* overflow: hidden; */
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 25px;
+}
+.dashboardboxwrapper .dashboardbox2 {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: #ccc;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 25px;
+}
+
+.boxsatu {
+  margin-bottom: 20px;
+}
+/* Mengatur jarak antar kelompok atas dan bawah */
+.boxdua {
+  margin-bottom: 20px; /* Jarak antara boxsatu dan boxdua */
+  color: #56ccfe;
+}
+
+/* Mengatur agar boxdua berada di tengah */
+.boxdua .dashboardboxwrapper {
+  justify-content: center; /* Menempatkan box dua di tengah */
+}
+
+.dashboardboxwrapper .dashboardbox .col1 h4 {
+  font-size: 23px;
+  font-weight: 600;
+}
+.dashboardboxwrapper .dashboardbox .col1 span {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+.dashboardboxwrapper .dashboardbox .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background: #ffffff;
+}
+.dashboardboxwrapperbox .pie {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #d7b26d, #eee2b5);
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.barwrapper {
+  width: 100%;
+  height: auto;
+  /* background: linear-gradient(to right, #e1d7c6, #eae4dd); */
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.barbox {
+  width: 100%;
+  height: 100%;
+}
+.dashboardboxwrapper .dashboardbox .icon svg {
+  font-size: 40px;
+  opacity: 0.5;
+  color: #000000;
+}
+@media (max-width: 1169px) {
+  .dashboardboxwrapper .dashboardbox {
+    width: 100%;
+    flex: 0 0 80%; /* atau nilai lain sesuai kebutuhan */
+    height: auto;
+  }
+  .dashboardboxwrapper {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Gulir halus untuk perangkat iOS */
+  }
+  .dashboardboxwrapperbox {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* .table .thead-dark {
+  background: #0033a0 !important;
+} */
+.table .thead-dark th {
+  background-color: rgb(241, 241, 241) !important; /* Warna biru */
+  color: rgb(0, 0, 0) !important; /* Teks berwarna putih */
+  align-items: center !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  padding: 15px;
+  text-align: left;
+  /* font-weight: 700; */
+  /* text-align: center !important; */
+}
+/* Wrapper untuk tabel dengan scrolling horizontal */
+/* .table-wrapper { */
+/* overflow-x: auto; Hanya tabel yang akan scroll horizontal */
+/* -webkit-overflow-scrolling: touch; Untuk perangkat iOS */
+/* margin-bottom: 20px; */
+/* } */
+
+/* Memastikan tabel tidak membungkus kolomnya */
+.table th,
+.table td {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.name-box {
+  align-items: center;
+  text-align: center !important;
+}
+.table td .img-in-table img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.table td .img-in-table .img {
+  box-shadow: 0 0.5rem 1rem #00000026 !important;
+  text-align: center;
+  padding: 3px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/* Tambahkan ke file CSS Anda */
+
+/* .table th,
+.table td {
+  border: 1px solid #ddddddbe;
+  padding: 8px; 
+} */
+
+/* Styling untuk form control dan pagination agar tetap di tempat */
+.search-bar,
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-bar input,
+.pagination-container select {
+  max-width: 300px;
+}
+
+.inputsearch {
+  height: 40px !important;
+}
+.actions button {
+  min-width: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 3px;
+}
+.actions button.secondary {
+  background: rgba(203, 60, 231, 0.173);
+  color: rgb(156, 39, 176) !important;
+}
+.actions button.success {
+  background: rgba(26, 159, 83, 0.173);
+  color: rgb(46, 125, 50) !important;
+}
+.actions button.error {
+  background: rgba(241, 17, 51, 0.173);
+  color: rgb(211, 47, 47) !important;
+}
+
+.badge-active {
+  background: rgba(26, 159, 83, 0.173);
+  color: rgb(46, 125, 50) !important;
+  border: 2px solid rgba(26, 159, 83, 0.173);
+  padding: 3px 10px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  align-items: center;
+}
+.badge-nonactive {
+  background: rgba(241, 17, 51, 0.173);
+  color: rgb(211, 47, 47) !important;
+  align-items: center;
+  border: 2px solid rgba(241, 17, 51, 0.173);
+  padding: 3px 10px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.actions button svg {
+  font-size: 17px;
+}
+.v-align td {
+  vertical-align: middle !important;
+}
+.gambar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #000 !important;
+}
+
+.table td {
+  /* padding: 15px !important; */
+  text-align: left;
+  font-weight: 500;
+  color: #363636 !important;
+}
+
+.table .check {
+  text-align: center !important;
+}
+.table th {
+  font-size: 39px !important;
+}
+.table tbody td {
+  font-size: 15px;
+}
+
+/* .table tr:nth-child(odd) {
+  background-color: #f2f2f2; 
+}
+
+.table tr:nth-child(even) {
+  background-color: #ffffff; 
+} */
+
+/* login */
+.box-area {
+  width: 930px;
+}
+
+/*------------ Right box ------------*/
+
+.right-box {
+  padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder {
+  font-size: 16px;
+}
+
+.rounded-4 {
+  border-radius: 20px;
+}
+.rounded-5 {
+  border-radius: 30px;
+}
+.btn-primary {
+  background-color: #0385ff !important;
+  border: none;
+  color: rgb(255, 255, 255);
+}
+.fs-2 {
+  color: #fff !important;
+  text-align: center !important;
+}
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+  .left-box {
+    height: 100px;
+    overflow: hidden;
+  }
+  .right-box {
+    padding: 20px;
+  }
+}
+
+/*  */
+
+.dashboardDataBox {
+  width: 100%;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.card {
+  border: none !important;
+}
+
+.table-data {
+  /* background-color: #d2cdf9; */
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+}
+.table-data > div {
+  border-radius: 20px;
+  background: #d2cdf9;
+  padding: 14px;
+  overflow-x: auto;
+}
+
+.table-data {
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+}
+.table-data > div {
+  border-radius: 20px;
+  background: #fff;
+  padding: 24px;
+  overflow-x: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cok {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.village table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.village table td {
+  padding: 16px 0;
+  align-items: center;
+}
+.village table th {
+  padding-bottom: 12px;
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--grey);
+}
+/* .village table tbody tr {
+    background: ghostwhite;
+    margin: 5px !important;
+  } */
+
+.users {
+  width: 100%;
+}
+.users {
+  width: 100%;
+  margin-bottom: 16px;
+  background: rgb(241, 241, 241);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* thead tr {
+  border-bottom: 1px solid #d10b0b !important;
+} */
+.add {
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 3px;
+  background: rgba(203, 60, 231, 0.1) !important;
+}
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px; /* Menambah lebar maksimal */
+  max-height: 80%; /* Menambah tinggi maksimal */
+  text-align: left;
+  box-sizing: border-box;
+  overflow-y: auto; /* Menambahkan overflow-y: auto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan shadow */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animasi */
+  transform: scale(1.1);
+}
+.avatar-profile {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  object-fit: cover;
+  margin: 20px;
+}
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px; /* Meningkatkan padding */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; /* Animasi border */
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  border-color: #25d366; /* Mengubah warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Animasi background */
+}
+
+.modal-content .btn {
+  background-color: #25d366;
+  color: white;
+}
+
+.modal-content .btn:hover {
+  background-color: #1da851; /* Warna saat hover */
+}
+
+.modal-content .btn[type="button"] {
+  background-color: #dc3545;
+}
+
+.modal-content .btn[type="button"]:hover {
+  background-color: #c82333; /* Warna saat hover */
+}
+.table-responsive::-webkit-scrollbar {
+  display: none !important;
+}
+/* .generus table,
+.generus th,
+.generus td {
+  border: none !important;
+} */
+.table-responsive td {
+  padding: 10px;
+  align-items: center !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.searchInput {
+  width: 40% !important;
+}
+
+.nav-tabs {
+  width: 70% !important;
+}
+/* CSS untuk mengubah warna teks tombol Filter */
+.filter-btn {
+  color: #000 !important; /* Ubah dengan warna yang Anda inginkan */
+  background: rgb(229, 229, 229) !important;
+  font-size: 13px !important;
+  height: 37px !important;
+  text-transform: capitalize !important;
+  padding: 15px !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+.export-btn {
+  color: #fff !important; /* Ubah dengan warna yang Anda inginkan */
+  background: #198754 !important;
+  font-size: 13px !important;
+  height: 37px !important;
+  text-transform: capitalize !important;
+  padding: 15px !important;
+  /* font-family: "Poppins", sans-serif !important; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+/* .add-btn {
+  color: #fff !important;
+  background: #0385ff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+} */
+.btns {
+  height: 37px;
+  font-family: "Poppins", sans-serif !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.delete-btn {
+  color: #fff !important; /* Ubah dengan warna yang Anda inginkan */
+  background: rgb(221, 25, 25) !important;
+  font-size: 13px !important;
+  height: 37px !important;
+  font-family: "Poppins", sans-serif !important;
+  text-transform: capitalize !important;
+}
+
+@media (max-width: 768px) {
+  .nav-tabs {
+    width: 100% !important;
+  }
+  .table-fitur .kanan,
+  .table-fitur {
+    display: flex;
+    justify-content: center !important;
+    width: 100%;
+  }
+  .searchInput {
+    width: 100% !important;
+    display: flex;
+    justify-content: center !important;
+  }
+  .minmax {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .kanan {
+    width: 100% !important;
+  }
+  .table-fitur {
+    padding: 0 !important;
+  }
+  .but {
+    justify-content: center;
+  }
+}
+.kanan {
+  width: 80% !important;
+}
+/* Modal Styling */
+.modal-content {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 1.25rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+/* Form Inputs Styling */
+.form-control {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.form-select {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.content-left {
+  border-right: solid #ccc; /* Garis vertikal */
+  padding-right: 20px; /* Spasi antara konten dan garis */
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  /* Untuk layar kecil (mobile) */
+  .content-left {
+    border-right: none; /* Hilangkan garis */
+    padding-right: 0; /* Hilangkan padding kanan */
+  }
+  .semangat {
+    margin-left: 0;
+  }
+  .right-text {
+    padding: 20px;
+  }
+  .line-chart {
+    width: 100% !important;
+    padding: 20px;
+  }
+  .content-left {
+    padding: 20px;
+  }
+}
+
+/* .content-right {
+  padding: 10px;
+  background: #0385ff;
+} */
+.semangat {
+  width: 250px;
+  margin-left: 15px;
+}
+.info-text {
+  padding: 10px;
+  align-self: center;
+}
+.info-text h1 {
+  font-size: 16px;
+  font-family: "Inter", sans-serif !important;
+  color: #16325b;
+  font-weight: bold;
+}
+.info-text h1 span {
+  text-transform: uppercase;
+}
+.info-text p {
+  font-size: 14px;
+  font-family: "Inter", sans-serif !important;
+  color: gray;
+}
+
+.upload-valid .ant-upload-list-item {
+  border: 2px solid green !important;
+}
+
+.upload-invalid .ant-upload-list-item {
+  border: 2px solid red !important;
+}
+
+.message-invalid {
+  color: red;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* Gaya khusus untuk tab */
+.custom-tabs .ant-tabs-tab {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Add margin between page buttons */
+.pagination .page-item {
+  margin-right: 8px; /* Adjust the value to your preference */
+}
+
+/* Remove borders and focus outline from the page buttons */
+.pagination .page-link {
+  border: none;
+  padding: 5px 12px; /* Optional: Adjust padding */
+  outline: none; /* Remove focus outline */
+}
+
+/* Remove focus style when a button is clicked */
+.pagination .page-item:focus,
+.pagination .page-link:focus {
+  outline: none; /* Remove the outline for focused elements */
+  box-shadow: none; /* Remove any shadow effects for focused elements */
+}
+
+/* Adjust active class to highlight selected page without border */
+.pagination .active .page-link {
+  background-color: #007bff; /* Your active color */
+  color: white;
+  border-radius: 4px;
+}
+
+/* Remove border from the "Previous" and "Next" buttons */
+.pagination .page-item .page-link {
+  border: none;
+  padding: 5px 12px; /* Optional: Adjust padding */
+}
+
+.group-content {
+  margin: 7% 30px 0 30px;
+}
+.group-text {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  text-align: center;
+}
+.group-text h1 {
+  font-size: 30px;
+}
+
+.frame-box {
+  width: 300px;
+}
