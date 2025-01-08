@@ -14,6 +14,7 @@ import Kelompok from "./pages/MustLogin/Generus/Village";
 import TokenChecker from "./CheckToken/TokenChecker";
 import ErrorPage from "./pages/ErrorPage"; // Import halaman 404
 import Profile from "./pages/MustLogin/Profile";
+import Home from "./pages/Home";
 
 const DashboardSelector = () => {
   const { userRole } = useAuth();
@@ -42,6 +43,9 @@ function App() {
     >
       <TokenChecker />
       <Routes>
+        {/* Home page doesn't check authentication */}
+        <Route path="/" element={<Home />} />
+
         <Route
           path="/dashboard"
           element={
@@ -76,7 +80,7 @@ function App() {
           path="/group/:uuid"
           element={isAuthenticated ? <Kelompok /> : <Navigate to="/login" />}
         />
-        {/* Tambahkan rute wildcard untuk menangani 404 */}
+        {/* Add a wildcard route for 404 page */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

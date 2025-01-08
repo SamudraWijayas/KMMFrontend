@@ -16,6 +16,7 @@
     "@mui/material": "^6.1.7",
     "@mui/styled-engine-sc": "^6.1.7",
     "antd": "^5.22.6",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.6",
