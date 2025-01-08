@@ -28,7 +28,7 @@ function ViewGenerus({ editData, onClose }) {
   // Fetch list of desa
   const fetchDesa = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/desa");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setDesaList(response.data);
     } catch (error) {
       console.error("Error fetching desa:", error);
@@ -39,7 +39,7 @@ function ViewGenerus({ editData, onClose }) {
   // Fetch list of kelompok
   const fetchKelompok = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/kelompok");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/kelompok`);
       setKelompokList(response.data);
     } catch (error) {
       console.error("Error fetching kelompok:", error);
@@ -50,7 +50,7 @@ function ViewGenerus({ editData, onClose }) {
   // Fetch data by ID
   const fetchDataById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/generus/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/generus/${id}`);
       const data = response.data;
 
       // Set the date of birth if valid

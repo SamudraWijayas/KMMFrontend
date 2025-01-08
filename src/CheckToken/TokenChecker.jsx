@@ -13,7 +13,7 @@ const TokenChecker = () => {
 
     const checkToken = async () => {
       try {
-        await axios.get("http://localhost:5000/me", {
+        await axios.get(`${import.meta.env.VITE_API_URL}/api/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

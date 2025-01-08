@@ -33,7 +33,7 @@ function EditModal({ editData, onClose, onUpdate }) {
   // Fetch Desa List
   const fetchDesa = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/desa");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setDesaList(response.data);
     } catch (error) {
       message.error("Gagal memuat data desa!");
@@ -43,7 +43,7 @@ function EditModal({ editData, onClose, onUpdate }) {
   // Fetch Kelompok List
   const fetchKelompok = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/kelompok");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/kelompok`);
       setKelompokList(response.data);
     } catch (error) {
       console.error("Error fetching kelompok:", error);
@@ -54,7 +54,7 @@ function EditModal({ editData, onClose, onUpdate }) {
   // Fetch data by ID for editing
   const fetchDataById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/generus/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/generus/${id}`);
       const data = response.data;
 
       // Format the birth date correctly
@@ -166,7 +166,7 @@ function EditModal({ editData, onClose, onUpdate }) {
 
       // Kirim data ke server dengan method PUT dan tipe konten multipart/form-data
       const response = await axios.put(
-        `http://localhost:5000/generus/${editData.id}`, // Pastikan id sesuai
+        `${import.meta.env.VITE_API_URL}/api/generus/${editData.id}`, // Pastikan id sesuai
         formData, // Kirim data FormData
         {
           headers: {

@@ -22,10 +22,10 @@ const StatisticsBar = () => {
     const fetchData = async () => {
       try {
         // Fetch data from the APIs
-        const desaResponse = await axios.get("http://localhost:5000/desa");
+        const desaResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
         const desaData = desaResponse.data;
 
-        const generusResponse = await axios.get("http://localhost:5000/generus");
+        const generusResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/generus`);
         const generusData = generusResponse.data;
 
         // Group generus data by desa and jenjang

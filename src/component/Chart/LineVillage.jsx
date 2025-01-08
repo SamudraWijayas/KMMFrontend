@@ -37,11 +37,11 @@ const LineVillage = ({ id_desa }) => {
     const fetchData = async () => {
       try {
         const kelompokResponse = await axios.get(
-          `http://localhost:5000/kelompok/desa/${id_desa}`
+          `${import.meta.env.VITE_API_URL}/api/kelompok/desa/${id_desa}`
         );
 
         const generusResponse = await axios.get(
-          "http://localhost:5000/generus"
+          `${import.meta.env.VITE_API_URL}/api/generus`
         );
 
         const kelompokData = kelompokResponse.data;

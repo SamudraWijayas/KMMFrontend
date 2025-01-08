@@ -34,7 +34,7 @@ const EditPassword = ({ isModalOpen, setIsModalOpen }) => {
 
       // Kirim request untuk update password
       const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/update-password`,
+        `${import.meta.env.VITE_API_URL}/api/update-password`,
         {
           oldPassword,
           newPassword,

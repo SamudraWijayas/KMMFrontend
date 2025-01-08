@@ -34,11 +34,11 @@ const StatisticsLine = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const desaResponse = await axios.get("http://localhost:5000/desa");
+        const desaResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
         const desaData = desaResponse.data;
 
         const generusResponse = await axios.get(
-          "http://localhost:5000/generus"
+          `${import.meta.env.VITE_API_URL}/api/generus`
         );
         const generusData = generusResponse.data;
 

@@ -13,7 +13,7 @@ const StatisticsChart = ({ id_desa }) => {
   const fetchGenerusData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/generus/desa/${id_desa}`
+        `${import.meta.env.VITE_API_URL}/api/generus/desa/${id_desa}`
       );
       setGenerusData(response.data);
     } catch (error) {

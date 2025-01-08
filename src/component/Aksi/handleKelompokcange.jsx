@@ -11,7 +11,7 @@ const AddGroupModel = () => {
 
   const fetchKelompok = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/kelompok`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/kelompok`);
       const data = await response.json();
       setKelompokList(data); // Simpan data kelompok ke state
     } catch (error) {
@@ -22,7 +22,7 @@ const AddGroupModel = () => {
 
   const fetchDesa = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/desa`);
       const data = await response.json();
       setDesaList(data); // Simpan data desa ke state
     } catch (error) {
@@ -58,7 +58,7 @@ const AddGroupModel = () => {
 
       // Kirim data ke backend
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/kelompok`,
+        `${import.meta.env.VITE_API_URL}/api/kelompok`,
         values
       );
 

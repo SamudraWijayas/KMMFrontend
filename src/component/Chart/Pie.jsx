@@ -16,7 +16,7 @@ const StatisticsChart = () => {
   const fetchGenerusData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/generus");
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/generus`);
       setTimeout(() => {
         setGenerusData(response.data);
         setLoading(false);

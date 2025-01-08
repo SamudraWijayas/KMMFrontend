@@ -69,7 +69,7 @@ const Profile = () => {
     try {
       const accessToken = Cookies.get("accessToken");
       const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/update`,
+        `${import.meta.env.VITE_API_URL}/api/update`,
         formData,
         {
           headers: {

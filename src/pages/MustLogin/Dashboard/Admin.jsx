@@ -133,7 +133,7 @@ const Dashboard = () => {
   const getGroups = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/kelompok`
+        `${import.meta.env.VITE_API_URL}/api/kelompok`
       );
       setGroups(response.data);
     } catch (error) {
@@ -145,7 +145,7 @@ const Dashboard = () => {
   const getVillages = async () => {
     setLoadingVillages(true); // Set loading menjadi true saat memulai request
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setVillages(response.data);
     } catch (error) {
       console.error("Error fetching villages:", error);
@@ -158,7 +158,7 @@ const Dashboard = () => {
   const deleteVillage = async (uuid) => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/desa/${uuid}`
+        `${import.meta.env.VITE_API_URL}/api/desa/${uuid}`
       );
       message.success("Desa berhasil dihapus!");
       getVillages(); // Refresh daftar desa setelah penghapusan
@@ -172,7 +172,7 @@ const Dashboard = () => {
   const getUsers = async () => {
     setLoadingUsers(true); // Set loading menjadi true saat memulai request
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users`);
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -185,7 +185,7 @@ const Dashboard = () => {
   };
   const fetchTotalDesa = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/totalDesa`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/totalDesa`);
       const data = await response.json();
       setTotalDesa(data.totalDesa);
     } catch (error) {
@@ -200,7 +200,7 @@ const Dashboard = () => {
   const fetchTotalKelompok = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/totalKelompok`
+        `${import.meta.env.VITE_API_URL}/api/totalKelompok`
       );
       const data = await response.json();
       setTotalKelompok(data.totalKelompok);
@@ -217,7 +217,7 @@ const Dashboard = () => {
   const fetchTotalGenerus = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/totalGenerus`
+        `${import.meta.env.VITE_API_URL}/api/totalGenerus`
       );
       const data = await response.json();
       setTotalGenerus(data.totalGenerus);
@@ -235,7 +235,7 @@ const Dashboard = () => {
     try {
       setLoading(true); // Start loading immediately
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/totalUsers`
+        `${import.meta.env.VITE_API_URL}/api/totalUsers`
       );
       const data = await response.json();
       setTotalUsers(data.totalUsers);
@@ -275,7 +275,7 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/desa`,
+        `${import.meta.env.VITE_API_URL}/api/desa`,
         { desa: desa },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -303,7 +303,7 @@ const Dashboard = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/register`,
+        `${import.meta.env.VITE_API_URL}/api/register`,
         {
           username,
           password,

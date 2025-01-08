@@ -59,7 +59,7 @@ const Kelompok = () => {
     // Fetch data based on id when edit button is clicked
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/${id}`
+        `${import.meta.env.VITE_API_URL}/api/generus/${id}`
       );
       setEditData(response.data); // Set the fetched data into the editData state
       setIsModalVisible(true); // Show the modal
@@ -73,7 +73,7 @@ const Kelompok = () => {
     // Fetch data based on id when edit button is clicked
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/${id}`
+        `${import.meta.env.VITE_API_URL}/api/generus/${id}`
       );
       setViewData(response.data); // Set the fetched data into the editData state
       setIsModalVisible(true); // Show the modal
@@ -105,7 +105,7 @@ const Kelompok = () => {
     setLoading(true); // Set loading to true before fetching data
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/kelompok/${uuid}`
+        `${import.meta.env.VITE_API_URL}/api/generus/kelompok/${uuid}`
       );
       // console.log("API Response:", response.data); // Log response dari API
 
@@ -144,7 +144,7 @@ const Kelompok = () => {
 
   const fetchDesa = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setDesaData(response.data);
     } catch (error) {
       console.error("Error fetching desa data:", error);
@@ -154,7 +154,7 @@ const Kelompok = () => {
   const fetchKelompok = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/kelompok`
+        `${import.meta.env.VITE_API_URL}/api/kelompok`
       );
       setKelompokData(response.data);
     } catch (error) {
@@ -286,7 +286,7 @@ const Kelompok = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/generus/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/generus/${id}`);
       message.success("Data Berhasil Dihapus!");
 
       // Perbarui state lokal untuk menghapus item yang dihapus
@@ -302,7 +302,7 @@ const Kelompok = () => {
     try {
       await Promise.all(
         selectedIds.map((id) =>
-          axios.delete(`${import.meta.env.VITE_API_URL}/generus/${id}`)
+          axios.delete(`${import.meta.env.VITE_API_URL}/api/generus/${id}`)
         )
       );
       message.success("Data Berhasil Dihapus!");

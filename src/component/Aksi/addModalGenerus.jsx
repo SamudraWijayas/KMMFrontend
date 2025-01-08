@@ -31,7 +31,7 @@ function Modals({ onAddData }) {
 
   const fetchKelompok = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/kelompok`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/kelompok`);
       const data = await response.json();
       setKelompokList(data); // Simpan data kelompok ke state
     } catch (error) {
@@ -42,7 +42,7 @@ function Modals({ onAddData }) {
 
   const fetchDesa = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/desa`);
       const data = await response.json();
       setDesaList(data); // Simpan data desa ke state
     } catch (error) {
@@ -94,7 +94,7 @@ function Modals({ onAddData }) {
 
       // Kirim form data dan gambar ke backend
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/generus`, // Endpoint backend
+        `${import.meta.env.VITE_API_URL}/api/generus`, // Endpoint backend
         formData,
         {
           headers: {

@@ -57,7 +57,7 @@ const Generus = () => {
     // Fetch data based on id when edit button is clicked
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/${id}`
+        `${import.meta.env.VITE_API_URL}/api/generus/${id}`
       );
       setEditData(response.data); // Set the fetched data into the editData state
       setIsModalVisible(true); // Show the modal
@@ -71,7 +71,7 @@ const Generus = () => {
     // Fetch data based on id when edit button is clicked
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/${id}`
+        `${import.meta.env.VITE_API_URL}/api/generus/${id}`
       );
       setViewData(response.data); // Set the fetched data into the editData state
       setIsModalVisible(true); // Show the modal
@@ -102,7 +102,7 @@ const Generus = () => {
   const fetchGenerus = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus`
+        `${import.meta.env.VITE_API_URL}/api/generus`
       );
       const formattedData = response.data.map((item) => {
         const birthdate = new Date(item.tgl_lahir);
@@ -135,7 +135,7 @@ const Generus = () => {
 
   const fetchDesa = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setDesaData(response.data);
     } catch (error) {
       console.error("Error fetching desa data:", error);
@@ -145,7 +145,7 @@ const Generus = () => {
   const fetchKelompok = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/kelompok`
+        `${import.meta.env.VITE_API_URL}/api/kelompok`
       );
       setKelompokData(response.data);
     } catch (error) {
@@ -304,7 +304,7 @@ const Generus = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/generus/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/generus/${id}`);
       message.success("Data Berhasil Dihapus!");
       fetchGenerus(); // Refresh data setelah penghapusan
     } catch (error) {
@@ -317,7 +317,7 @@ const Generus = () => {
     try {
       await Promise.all(
         selectedIds.map((id) =>
-          axios.delete(`${import.meta.env.VITE_API_URL}/generus/${id}`)
+          axios.delete(`${import.meta.env.VITE_API_URL}/api/generus/${id}`)
         )
       );
       message.success("Data Berhasil Dihapus!");

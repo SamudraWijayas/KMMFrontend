@@ -155,7 +155,7 @@ export const Sidebar = ({ username, avatar, id_desa }) => {
     setLoading(true); // Mulai loading sebelum request
     try {
       const response = await axios.get(
-        `http://localhost:5000/kelompok/desa/${id_desa}`
+        `${import.meta.env.VITE_API_URL}/api/kelompok/desa/${id_desa}`
       );
       setKelompokData(response.data);
       // Simpan data ke localStorage setelah berhasil fetch

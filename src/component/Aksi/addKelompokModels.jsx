@@ -11,7 +11,7 @@ const AddGroupModel = ({ onAddData }) => {
 
   const fetchDesa = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/desa`);
       const data = await response.json();
       setDesaList(data);
     } catch (error) {
@@ -29,7 +29,7 @@ const AddGroupModel = ({ onAddData }) => {
     try {
       const values = await form.validateFields(); // Validasi input form
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/kelompok`,
+        `${import.meta.env.VITE_API_URL}/api/kelompok`,
         values, // Data JSON yang dikirim
         {
           headers: {

@@ -54,7 +54,7 @@ const Group = () => {
     // Fetch data based on id when edit button is clicked
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/${id}`
+        `${import.meta.env.VITE_API_URL}/api/generus/${id}`
       );
       setEditData(response.data); // Set the fetched data into the editData state
       setIsModalVisible(true); // Show the modal
@@ -68,7 +68,7 @@ const Group = () => {
     // Fetch data based on id when edit button is clicked
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/${id}`
+        `${import.meta.env.VITE_API_URL}/api/generus/${id}`
       );
       setViewData(response.data); // Set the fetched data into the editData state
       setIsModalVisible(true); // Show the modal
@@ -100,7 +100,7 @@ const Group = () => {
     setLoading(true); // Set loading to true before fetching data
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/generus/kelompok/${id_kelompok}`
+        `${import.meta.env.VITE_API_URL}/api/generus/kelompok/${id_kelompok}`
       );
       // console.log("API Response:", response.data); // Log response dari API
 
@@ -139,7 +139,7 @@ const Group = () => {
 
   const fetchDesa = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setDesaData(response.data);
     } catch (error) {
       console.error("Error fetching desa data:", error);
@@ -149,7 +149,7 @@ const Group = () => {
   const fetchKelompok = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/kelompok`
+        `${import.meta.env.VITE_API_URL}/api/kelompok`
       );
       setKelompokData(response.data);
     } catch (error) {
@@ -281,7 +281,7 @@ const Group = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/generus/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/generus/${id}`);
       message.success("Data Berhasil Dihapus!");
       fetchGenerus(); // Refresh data setelah penghapusan
     } catch (error) {
@@ -294,7 +294,7 @@ const Group = () => {
     try {
       await Promise.all(
         selectedIds.map((id) =>
-          axios.delete(`${import.meta.env.VITE_API_URL}/generus/${id}`)
+          axios.delete(`${import.meta.env.VITE_API_URL}/api/generus/${id}`)
         )
       );
       message.success("Data Berhasil Dihapus!");

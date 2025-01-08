@@ -24,7 +24,7 @@ const Group = () => {
   const fetchKelompok = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/kelompok`
+        `${import.meta.env.VITE_API_URL}/api/kelompok`
       );
       setKelompokData(response.data);
     } catch (error) {
@@ -35,7 +35,7 @@ const Group = () => {
   // Ambil data desa
   const fetchDesa = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/desa`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/desa`);
       setDesaData(response.data);
     } catch (error) {
       console.error("Error fetching desa data:", error);

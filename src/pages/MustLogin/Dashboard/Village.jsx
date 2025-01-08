@@ -34,15 +34,15 @@ const Village = () => {
     try {
       const [generusRes, kelompokRes, mumiRes, caberawitRes] =
         await Promise.all([
-          axios.get(`${import.meta.env.VITE_API_URL}/generus/total/${id_desa}`),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/generus/total/${id_desa}`),
           axios.get(
-            `${import.meta.env.VITE_API_URL}/kelompok/total/${id_desa}`
+            `${import.meta.env.VITE_API_URL}/api/kelompok/total/${id_desa}`
           ),
           axios.get(
-            `${import.meta.env.VITE_API_URL}/generus/total/jenjang/${id_desa}`
+            `${import.meta.env.VITE_API_URL}/api/generus/total/jenjang/${id_desa}`
           ),
           axios.get(
-            `${import.meta.env.VITE_API_URL}/generus/total/caberawit/${id_desa}`
+            `${import.meta.env.VITE_API_URL}/api/generus/total/caberawit/${id_desa}`
           ),
         ]);
 
