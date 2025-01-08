@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Navbar from "../component/Navbar";
 import "./../css/main.css";
 import m2bl from "../assets/m2bl.jpg";
@@ -11,11 +11,13 @@ import "aos/dist/aos.css"; // Import file CSS AOS
 import AOS from "aos";
 
 const Home = () => {
-  AOS.init(); // Inisialisasi AOS
+  useEffect(() => {
+    AOS.init(); // Inisialisasi AOS hanya sekali
+  }, []);
   return (
     <>
       <Navbar />
-      <section id="hero" className="hero section" >
+      <section id="hero" className="hero section">
         <div className="container" data-aos="fade-up" data-aos-delay="100">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -30,12 +32,14 @@ const Home = () => {
                 </h1>
 
                 <div className="hero-buttons">
-                  <Link
-                    to="https://www.instagram.com/generus.bdl?igsh=MWQ3amdtejFqZmVlbA=="
+                  <a
+                    href="https://www.instagram.com/generus.bdl?igsh=MWQ3amdtejFqZmVlbA=="
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary me-0 me-sm-2 mx-1"
                   >
                     Instagram
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

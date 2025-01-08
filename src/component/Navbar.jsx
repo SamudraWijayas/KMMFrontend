@@ -3,6 +3,7 @@ import "./../css/main.css";
 import logo from "../assets/logo.png";
 import { Button } from "antd";
 import { useNavigate, Link } from "react-router-dom";
+import { RiMenu2Line } from "react-icons/ri";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -41,49 +42,6 @@ const Navbar = () => {
               <li>
                 <Link to="/statistik">Statistik</Link>
               </li>
-              {/* <li className="dropdown">
-                <Link to="#">
-                  <span>Dropdown</span>
-                  <i className="bi bi-chevron-down toggle-dropdown"></i>
-                </Link>
-                <ul>
-                  <li>
-                    <Link to="#">Dropdown 1</Link>
-                  </li>
-                  <li className="dropdown">
-                    <Link to="#">
-                      <span>Deep Dropdown</span>
-                      <i className="bi bi-chevron-down toggle-dropdown"></i>
-                    </Link>
-                    <ul>
-                      <li>
-                        <Link to="#">Deep Dropdown 1</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Deep Dropdown 2</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Deep Dropdown 3</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Deep Dropdown 4</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Deep Dropdown 5</Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link to="#">Dropdown 2</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Dropdown 3</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Dropdown 4</Link>
-                  </li>
-                </ul>
-              </li> */}
             </ul>
           </nav>
 
